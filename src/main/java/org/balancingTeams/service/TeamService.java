@@ -2,7 +2,6 @@ package org.balancingTeams.service;
 
 import org.balancingTeams.models.Person;
 import org.balancingTeams.models.Team;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -19,7 +18,6 @@ public class TeamService {
         }
         System.out.println("--------------------");
 
-
         // scenario if group is bigger than people
         int validGroup = Math.min(groups, people.size());
 
@@ -33,20 +31,62 @@ public class TeamService {
         }
 
         int index = groups;
+
+        var ListOfConflictsTeams = new ArrayList<Team>();
         while (index < people.size()) {
             var ListUsed = new ArrayList<Team>();
+
+            var DeclinedPersons = new ArrayList<Person>();
             for (int i = 0; i < groups; i++) {
                 if (index >= people.size())
                     break;
                 var candidateMember = people.get(index);
 
-                var team = teams.stream().filter(t -> !ListUsed.contains(t)).min(Comparator.
-                        comparing(t -> Math.abs(( (double) t.getCurrentSum() + candidateMember.getRate()) / (t.getMembers().size() + 1) - average))).get();
 
-                team.addMember(candidateMember);
-                ListUsed.add(team);
+                var teamFirstOfAll = teams.stream().filter(t -> !ListUsed.contains(t)).min(Comparator.
+                        comparing(t -> Math.abs(( t.getCurrentSum() + candidateMember.getRate()) / (t.getMembers().size() + 1) - average))).get();
+
+                var averageDifference = Math.abs((teamFirstOfAll.getCurrentSum() + candidateMember.getRate()) / (teamFirstOfAll.getMembers().size()+1) - average);
+                var team = teams.stream().filter(t -> !ListUsed.contains(t))
+                        .filter(t -> Math.abs((t.getCurrentSum() + candidateMember.getRate()) / (t.getMembers().size()+1) - average) == averageDifference).toList();
+                if(team.size() > 1)
+                {
+                   for(Team t : team)
+                   {
+                       if(t.getCurrentSum() + candidateMember.getRate() <= average)
+                       {
+                           ListOfConflictsTeams.add(t);
+                           DeclinedPersons.add(candidateMember);
+                       }
+                   }
+                }
+
+                else if(team.size() == 1){
+                    team.get(0).addMember(candidateMember);
+                    ListUsed.add(team.get(0));
+                }
+                else
+                {
+                    System.out.println("ww");
+                }
+
+                System.out.println("XD" + team);
 
                 index++;
+            }
+
+            if(ListOfConflictsTeams.size() > 0)
+            {
+                double expectedMemberOfTeam =  Math.ceil(people.size() / validGroup);
+
+                var availableTeams = teams.stream().filter(t -> t.getMembers().size() < expectedMemberOfTeam).toList();
+                for(Person person : DeclinedPersons)
+                {
+                    var chosenTeam = availableTeams.stream()
+                            .min(Comparator.comparing((t -> Math.abs((t.getCurrentSum() + person.getRate()) / (teams.size()+1)) - average) ))
+                            .get();
+                     teams.get(teams.indexOf(chosenTeam)).addMember(person);
+                }
             }
         }
 

@@ -10,7 +10,6 @@ import static org.junit.Assert.assertEquals;
 
 public class TeamServiceTest {
 
-
     @Test
     public void testGetBalancedTeamsGivenTest() {
         List<Person> poeple = new ArrayList<>(

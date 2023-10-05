@@ -5,11 +5,11 @@ import java.util.List;
 
 public class Team {
     private List<Person> members;
-    private int currentSum;
+    private Double currentSum;
 
     public Team() {
         members = new ArrayList<>();
-        currentSum = 0;
+        currentSum = 0.0;
     }
 
     public void addMember(Person member) {
@@ -17,7 +17,7 @@ public class Team {
         currentSum += member.getRate();
     }
 
-    public int getCurrentSum() {
+    public double getCurrentSum() {
         return currentSum;
     }
 

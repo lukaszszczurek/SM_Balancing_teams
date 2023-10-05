@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d16f6f5c-307d-44da-9c05-7e3a30cf7c07" name="Changes" comment="feat: add balancing team functionality of type Person">
-      <change afterPath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" afterDir="false" />
+    <list default="true" id="d16f6f5c-307d-44da-9c05-7e3a30cf7c07" name="Changes" comment="test : bug in scenario where average of the current list and candidate is the same in more than one team">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +63,7 @@
       <recent name="teamServiceTest" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TeamServiceTest">
+  <component name="RunManager" selected="JUnit.TeamServiceTest.testGetBalancedTeamsGivenTest">
     <configuration name="org.balancingTeams.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.balancingTeams.Main" />
       <module name="SM_interview_task" />
@@ -143,9 +142,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TeamServiceTest" />
         <item itemvalue="JUnit.TeamServiceTest.testGetBalancedTeamsGivenTest" />
         <item itemvalue="JUnit.TeamServiceTest.GetBalancedTeamsEqualNumberOfMembers" />
+        <item itemvalue="JUnit.TeamServiceTest" />
         <item itemvalue="JUnit.TeamServiceTest.testGetBalancedTeams" />
         <item itemvalue="Application.org.balancingTeams.Main" />
       </list>
@@ -161,7 +160,7 @@
       <updated>1696260155458</updated>
       <workItem from="1696260158634" duration="21612000" />
       <workItem from="1696344733729" duration="4889000" />
-      <workItem from="1696358138505" duration="34085000" />
+      <workItem from="1696358138505" duration="55340000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit - example scenario">
       <created>1696345388743</created>
@@ -177,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696416806223</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="test : bug in scenario where average of the current list and candidate is the same in more than one team">
+      <created>1696498646175</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696498646175</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,24 +204,31 @@
     <MESSAGE value="initial commit example scenario" />
     <MESSAGE value="initial commit - example scenario" />
     <MESSAGE value="feat: add balancing team functionality of type Person" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add balancing team functionality of type Person" />
+    <MESSAGE value="test : bug in scenario where average of the current list and candidate is the same in more than one team" />
+    <option name="LAST_COMMIT_MESSAGE" value="test : bug in scenario where average of the current list and candidate is the same in more than one team" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java</url>
-          <line>65</line>
+          <line>64</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java</url>
-          <line>14</line>
-          <properties class="teamServiceTest.TeamServiceTest" method="testGetBalancedTeamsGivenTest">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="7" />
+          <line>63</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
