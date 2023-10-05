@@ -67,8 +67,8 @@ public class Main {
 
 
        }
-        var standartDaviation =  teamService.GetStandartDeviation(a);
-        System.out.println(standartDaviation);
+        var standardDeviation =  teamService.GetStandartDeviation(a);
+        System.out.println(standardDeviation);
 
 
 

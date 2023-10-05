@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d16f6f5c-307d-44da-9c05-7e3a30cf7c07" name="Changes" comment="initial commit - example scenario">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" afterDir="false" />
+    <list default="true" id="d16f6f5c-307d-44da-9c05-7e3a30cf7c07" name="Changes" comment="feat: add balancing team functionality of type Person">
+      <change afterPath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -46,35 +43,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RunManager" selected="Application.org.balancingTeams.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="SM_interview_task" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="example.org.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="example.org.Main" />
-      <module name="SM_interview_task" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="example.org.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="teamServiceTest" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TeamServiceTest">
     <configuration name="org.balancingTeams.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.balancingTeams.Main" />
       <module name="SM_interview_task" />
@@ -88,11 +78,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TeamServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SM_interview_task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teamServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="teamServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="teamServiceTest.TeamServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeamServiceTest.GetBalancedTeamsEqualNumberOfMembers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SM_interview_task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teamServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="teamServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="teamServiceTest.TeamServiceTest" />
+      <option name="METHOD_NAME" value="GetBalancedTeamsEqualNumberOfMembers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeamServiceTest.testGetBalancedTeams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SM_interview_task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teamServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="teamServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="teamServiceTest.TeamServiceTest" />
+      <option name="METHOD_NAME" value="testGetBalancedTeams" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeamServiceTest.testGetBalancedTeamsGivenTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SM_interview_task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teamServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="teamServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="teamServiceTest.TeamServiceTest" />
+      <option name="METHOD_NAME" value="testGetBalancedTeamsGivenTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TeamServiceTest" />
+        <item itemvalue="JUnit.TeamServiceTest.testGetBalancedTeamsGivenTest" />
+        <item itemvalue="JUnit.TeamServiceTest.GetBalancedTeamsEqualNumberOfMembers" />
+        <item itemvalue="JUnit.TeamServiceTest.testGetBalancedTeams" />
         <item itemvalue="Application.org.balancingTeams.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.example.org.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -106,7 +161,7 @@
       <updated>1696260155458</updated>
       <workItem from="1696260158634" duration="21612000" />
       <workItem from="1696344733729" duration="4889000" />
-      <workItem from="1696358138505" duration="11618000" />
+      <workItem from="1696358138505" duration="34085000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit - example scenario">
       <created>1696345388743</created>
@@ -115,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696345388743</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: add balancing team functionality of type Person">
+      <created>1696416806223</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696416806223</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +197,27 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit example scenario" />
     <MESSAGE value="initial commit - example scenario" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit - example scenario" />
+    <MESSAGE value="feat: add balancing team functionality of type Person" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add balancing team functionality of type Person" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java</url>
+          <line>14</line>
+          <properties class="teamServiceTest.TeamServiceTest" method="testGetBalancedTeamsGivenTest">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

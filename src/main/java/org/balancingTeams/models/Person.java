@@ -2,9 +2,9 @@ package org.balancingTeams.models;
 
 public class Person {
     private String name;
-    private int rate;
+    private Integer rate;
 
-    public Person(String name, int rate) {
+    public Person(String name, Integer rate) {
         this.name = name;
         this.rate = rate;
     }
@@ -13,7 +13,7 @@ public class Person {
         return name;
     }
 
-    public int getRate() {
+    public Integer getRate() {
         return rate;
     }
 }
