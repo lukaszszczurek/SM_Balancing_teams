@@ -1,8 +1,8 @@
 package org.balancingTeams.models;
 
 public class Person {
-    private String name;
-    private Integer rate;
+    private final String name;
+    private final Integer rate;
 
     public Person(String name, Integer rate) {
         this.name = name;

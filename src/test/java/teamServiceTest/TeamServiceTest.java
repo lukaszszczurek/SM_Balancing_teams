@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class TeamServiceTest {
 
     @Test
-    public void testGetBalancedTeamsGivenTest() {
+    public void testgetBalancedTeamsGivenTest() {
         List<Person> poeple = new ArrayList<>(
                 Arrays.asList(
                         new Person("Johnny", 8),
@@ -25,10 +25,10 @@ public class TeamServiceTest {
 
 
         TeamService teamService = new TeamService();
-        var result = teamService.GetBalancedTeams(poeple,3);
+        var result = teamService.getBalancedTeams(poeple,3);
         System.out.println(result);
 
-        var standardDeviation = teamService.GetStandartDeviation(result);
+        var standardDeviation = teamService.getStandardDeviation(result);
         double expected = 0.41;
 
         assertEquals(expected, standardDeviation, 0.01);
@@ -36,7 +36,7 @@ public class TeamServiceTest {
     }
 
     @Test
-    public void GetBalancedTeamsEqualNumberOfMembers ()
+    public void getBalancedTeamsEqualNumberOfMembers ()
     {
         List<Person> testOneData = new ArrayList<>(
                 Arrays.asList(
@@ -61,12 +61,12 @@ public class TeamServiceTest {
         System.out.println("LIS: " + testOneData);
 
         TeamService teamService = new TeamService();
-        var resultFirstCase = teamService.GetBalancedTeams(testOneData,2);
-        var resultSecondCase = teamService.GetBalancedTeams(testTwoData,3);
+        var resultFirstCase = teamService.getBalancedTeams(testOneData,2);
+        var resultSecondCase = teamService.getBalancedTeams(testTwoData,3);
 
 
-        var standardDeviationForFirstData = teamService.GetStandartDeviation(resultFirstCase);
-        var standardDeviationForSecondData = teamService.GetStandartDeviation(resultSecondCase);
+        var standardDeviationForFirstData = teamService.getStandardDeviation(resultFirstCase);
+        var standardDeviationForSecondData = teamService.getStandardDeviation(resultSecondCase);
         double expectedForFirstData = 0.0;
         double expectedForSecondData = 0.41;
 

@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d16f6f5c-307d-44da-9c05-7e3a30cf7c07" name="Changes" comment="test : bug in scenario where average of the current list and candidate is the same in more than one team">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" afterDir="false" />
@@ -29,13 +33,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
   <component name="ProjectId" id="2WDHIVb9kwWhMknWeCrPLhmNvri" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -50,9 +50,15 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -63,20 +69,7 @@
       <recent name="teamServiceTest" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TeamServiceTest.testGetBalancedTeamsGivenTest">
-    <configuration name="org.balancingTeams.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.balancingTeams.Main" />
-      <module name="SM_interview_task" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.balancingTeams.models.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TeamServiceTest.getBalancedTeamsEqualNumberOfMembers">
     <configuration name="TeamServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SM_interview_task" />
       <extension name="coverage">
@@ -108,7 +101,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TeamServiceTest.testGetBalancedTeams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TeamServiceTest.getBalancedTeamsEqualNumberOfMembers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SM_interview_task" />
       <extension name="coverage">
         <pattern>
@@ -118,7 +111,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="teamServiceTest" />
       <option name="MAIN_CLASS_NAME" value="teamServiceTest.TeamServiceTest" />
-      <option name="METHOD_NAME" value="testGetBalancedTeams" />
+      <option name="METHOD_NAME" value="getBalancedTeamsEqualNumberOfMembers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,13 +133,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TeamServiceTest.testgetBalancedTeamsGivenTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SM_interview_task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teamServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="teamServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="teamServiceTest.TeamServiceTest" />
+      <option name="METHOD_NAME" value="testgetBalancedTeamsGivenTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TeamServiceTest.getBalancedTeamsEqualNumberOfMembers" />
+        <item itemvalue="JUnit.TeamServiceTest.testgetBalancedTeamsGivenTest" />
         <item itemvalue="JUnit.TeamServiceTest.testGetBalancedTeamsGivenTest" />
         <item itemvalue="JUnit.TeamServiceTest.GetBalancedTeamsEqualNumberOfMembers" />
         <item itemvalue="JUnit.TeamServiceTest" />
-        <item itemvalue="JUnit.TeamServiceTest.testGetBalancedTeams" />
-        <item itemvalue="Application.org.balancingTeams.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +170,7 @@
       <workItem from="1696260158634" duration="21612000" />
       <workItem from="1696344733729" duration="4889000" />
       <workItem from="1696358138505" duration="55340000" />
+      <workItem from="1696535068559" duration="12983000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit - example scenario">
       <created>1696345388743</created>
@@ -230,7 +240,48 @@
           <line>30</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java</url>
+          <line>115</line>
+          <properties>
+            <option name="lambda-ordinal" value="0" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java</url>
+          <line>116</line>
+          <properties>
+            <option name="lambda-ordinal" value="0" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.balancingTeams.models.Team" memberName="currentSum" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="teams.get(1)" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
-    private List<Person> members;
+    private final List<Person> members;
     private Double currentSum;
 
     public Team() {

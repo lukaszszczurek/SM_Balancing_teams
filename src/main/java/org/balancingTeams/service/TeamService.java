@@ -1,5 +1,6 @@
 package org.balancingTeams.service;
 
+
 import org.balancingTeams.models.Person;
 import org.balancingTeams.models.Team;
 import java.util.ArrayList;
@@ -8,18 +9,23 @@ import java.util.List;
 
 public class TeamService {
 
-    public List<List<Person>> GetBalancedTeams(List<Person> people, int groups) {
-        double average = people.stream().mapToDouble(Person::getRate).sum() / people.size();
-        System.out.println("AVENGERS : " + average);
+
+
+    public List<List<Person>> getBalancedTeams(List<Person> people, int groupCount) {
+
+
+        double average = people.stream()
+                .mapToDouble(Person::getRate)
+                .sum() / people.size();
         people.sort(Comparator.comparing(Person::getRate));
 
-        for (int i = 0; i < people.size(); i++) {
-            System.out.println(people.get(i).getName() + " " + people.get(i).getRate());
-        }
+        people.forEach(person -> {
+            System.out.println(person.getName() + " " + person.getRate());
+        });
         System.out.println("--------------------");
 
-        // scenario if group is bigger than people
-        int validGroup = Math.min(groups, people.size());
+        // scenario if group is bigger than people count
+        int validGroup = Math.min(groupCount, people.size());
 
         List<Team> teams = new ArrayList<>();
         for (int i = 0; i < validGroup; i++) {
@@ -27,72 +33,22 @@ public class TeamService {
         }
 
         for (int i = 0; i < validGroup; i++) {
-            teams.get(i).addMember(people.get(i));
+           teams.get(i).addMember(people.get(i));
+
         }
 
-        int index = groups;
+        int index = groupCount;
 
         var ListOfConflictsTeams = new ArrayList<Team>();
-        while (index < people.size()) {
-            var ListUsed = new ArrayList<Team>();
-
-            var DeclinedPersons = new ArrayList<Person>();
-            for (int i = 0; i < groups; i++) {
-                if (index >= people.size())
-                    break;
-                var candidateMember = people.get(index);
 
 
-                var teamFirstOfAll = teams.stream().filter(t -> !ListUsed.contains(t)).min(Comparator.
-                        comparing(t -> Math.abs(( t.getCurrentSum() + candidateMember.getRate()) / (t.getMembers().size() + 1) - average))).get();
 
-                var averageDifference = Math.abs((teamFirstOfAll.getCurrentSum() + candidateMember.getRate()) / (teamFirstOfAll.getMembers().size()+1) - average);
-                var team = teams.stream().filter(t -> !ListUsed.contains(t))
-                        .filter(t -> Math.abs((t.getCurrentSum() + candidateMember.getRate()) / (t.getMembers().size()+1) - average) == averageDifference).toList();
-                if(team.size() > 1)
-                {
-                   for(Team t : team)
-                   {
-                       if(t.getCurrentSum() + candidateMember.getRate() <= average)
-                       {
-                           ListOfConflictsTeams.add(t);
-                           DeclinedPersons.add(candidateMember);
-                       }
-                   }
-                }
+        collectingTeamProcess(index, people, teams, groupCount, average, validGroup, ListOfConflictsTeams);
 
-                else if(team.size() == 1){
-                    team.get(0).addMember(candidateMember);
-                    ListUsed.add(team.get(0));
-                }
-                else
-                {
-                    System.out.println("ww");
-                }
-
-                System.out.println("XD" + team);
-
-                index++;
-            }
-
-            if(ListOfConflictsTeams.size() > 0)
-            {
-                double expectedMemberOfTeam =  Math.ceil(people.size() / validGroup);
-
-                var availableTeams = teams.stream().filter(t -> t.getMembers().size() < expectedMemberOfTeam).toList();
-                for(Person person : DeclinedPersons)
-                {
-                    var chosenTeam = availableTeams.stream()
-                            .min(Comparator.comparing((t -> Math.abs((t.getCurrentSum() + person.getRate()) / (teams.size()+1)) - average) ))
-                            .get();
-                     teams.get(teams.indexOf(chosenTeam)).addMember(person);
-                }
-            }
-        }
 
         List<List<Person>> result = new ArrayList<>();
 
-        for (int i = 0; i < groups; i++) {
+        for (int i = 0; i < groupCount; i++) {
 
             if (i >= validGroup) {
                 result.add(null);
@@ -102,9 +58,9 @@ public class TeamService {
         }
 
         for (int i = 0; i < result.size(); i++) {
-           for (int j = 0; j < result.get(i).size(); j++) {
-               System.out.println(result.get(i).get(j).getName());
-           }
+            for (int j = 0; j < result.get(i).size(); j++) {
+                System.out.println(result.get(i).get(j).getName());
+            }
             System.out.println("-----------");
         }
         return result;
@@ -113,7 +69,8 @@ public class TeamService {
     public double GetAverageInTeam(List<Person> people) {
         return people.stream().mapToDouble(Person::getRate).sum() / people.size();
     }
-    public double GetStandartDeviation(List<List<Person>> people) {
+
+    public double getStandardDeviation(List<List<Person>> people) {
 
         List<Double> averageInTeams = new ArrayList<>();
 
@@ -126,25 +83,84 @@ public class TeamService {
         for (Double inTeam : averageInTeams) {
             sumAllElements += inTeam;
         }
-        System.out.println("SUM: " + sumAllElements);
 
         double average = sumAllElements / averageInTeams.size();
-        System.out.println("AVERAGE: " + average);
         double sumOfSquares = 0;
 
         for (Double averageInTeam : averageInTeams) {
-            System.out.println("AVERAGE IN TEAM: " + averageInTeam);
             sumOfSquares += Math.pow(averageInTeam - average, 2);
-            System.out.println("SQUARE" + averageInTeams.indexOf(averageInTeam) + " : "   + sumOfSquares);
         }
-
-        System.out.println("SUM OF SQUARES: " + sumOfSquares);
-
-        System.out.println("AVERAGE IN TEAMS SIZE: " + averageInTeams.size());
         double variance = sumOfSquares / averageInTeams.size();
 
-        System.out.println("VARIANCE: " + variance);
 
-        return  Math.round(Math.sqrt(variance) * 100) / 100.0;
+        return Math.round(Math.sqrt(variance) * 100) / 100.0;
+    }
+
+
+    void collectingTeamProcess(int index, List<Person> people, List<Team> teams,
+                               int groupCount, double average,
+                               int validGroup, List<Team> ListOfConflictsTeams)
+
+    {
+        var DeclinedPersons = new ArrayList<Person>();
+        var ListUsed = new ArrayList<Team>();
+
+
+        while (index < people.size()) {
+
+            for (int i = 0; i < groupCount; i++) {
+                if (index >= people.size())
+                    break;
+                var candidateMember = people.get(index);
+
+                var teamFirstOfAll = teams.stream().filter(t -> !ListUsed.contains(t)).min(Comparator.
+                        comparing(t -> Math.abs((t.getCurrentSum() + candidateMember.getRate()) / (t.getMembers().size() + 1) - average))).get();
+
+                var averageDifference = Math.abs((teamFirstOfAll.getCurrentSum() + candidateMember.getRate()) / (teamFirstOfAll.getMembers().size() + 1) - average);
+                var team = teams.stream().filter(t -> !ListUsed.contains(t))
+                        .filter(t -> Math.abs((t.getCurrentSum() + candidateMember.getRate()) / (t.getMembers().size() + 1) - average) == averageDifference).toList();
+                if (team.size() > 1) {
+                    for (Team t : team) {
+                      {
+                            if(!ListOfConflictsTeams.contains(t))
+                            {
+                                ListOfConflictsTeams.add(t);
+                            }
+                            if(!DeclinedPersons.contains(candidateMember))
+                          {
+                                DeclinedPersons.add(candidateMember);
+
+                          }
+
+                        }
+                    }
+                } else if (team.size() == 1) {
+                    team.get(0).addMember(candidateMember);
+                    ListUsed.add(team.get(0));
+                    if(ListOfConflictsTeams.contains(team.get(0)))
+                    {
+                        ListOfConflictsTeams.remove(team.get(0));
+                    }
+                } else {
+                    System.out.println("ww");
+                }
+
+                index++;
+            }
+
+
+        }
+
+        if (!ListOfConflictsTeams.isEmpty()) {
+            double expectedMemberOfTeam = Math.ceil((double) people.size() / validGroup);
+
+            var availableTeams = teams.stream().filter(t -> t.getMembers().size() < expectedMemberOfTeam).toList();
+            for (Person person : DeclinedPersons) {
+                var chosenTeam = availableTeams.stream()
+                        .min(Comparator.comparing((t -> Math.abs((t.getCurrentSum() + person.getRate()) / (teams.size() + 1)) - average)))
+                        .get();
+                teams.get(teams.indexOf(chosenTeam)).addMember(person);
+            }
+        }
     }
 }
