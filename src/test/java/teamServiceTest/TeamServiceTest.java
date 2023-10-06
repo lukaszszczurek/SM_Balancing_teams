@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class TeamServiceTest {
 
     @Test
-    public void testgetBalancedTeamsGivenTest() {
+    public void testgetBalancedTeamsGivenTest() throws NoSuchFieldException {
         List<Person> poeple = new ArrayList<>(
                 Arrays.asList(
                         new Person("Johnny", 8),
@@ -36,8 +36,7 @@ public class TeamServiceTest {
     }
 
     @Test
-    public void getBalancedTeamsEqualNumberOfMembers ()
-    {
+    public void getBalancedTeamsEqualNumberOfMembers () throws NoSuchFieldException {
         List<Person> testOneData = new ArrayList<>(
                 Arrays.asList(
                         new Person("Johnny", 1),

@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d16f6f5c-307d-44da-9c05-7e3a30cf7c07" name="Changes" comment="test : bug in scenario where average of the current list and candidate is the same in more than one team">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/exception/NoTeamAvailableException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/models/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" afterDir="false" />
     </list>
@@ -22,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -33,9 +30,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2WDHIVb9kwWhMknWeCrPLhmNvri" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -58,6 +55,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -69,7 +67,7 @@
       <recent name="teamServiceTest" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TeamServiceTest.getBalancedTeamsEqualNumberOfMembers">
+  <component name="RunManager" selected="JUnit.TeamServiceTest">
     <configuration name="TeamServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SM_interview_task" />
       <extension name="coverage">
@@ -151,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TeamServiceTest.getBalancedTeamsEqualNumberOfMembers" />
+        <item itemvalue="JUnit.TeamServiceTest" />
         <item itemvalue="JUnit.TeamServiceTest.testgetBalancedTeamsGivenTest" />
+        <item itemvalue="JUnit.TeamServiceTest.getBalancedTeamsEqualNumberOfMembers" />
         <item itemvalue="JUnit.TeamServiceTest.testGetBalancedTeamsGivenTest" />
         <item itemvalue="JUnit.TeamServiceTest.GetBalancedTeamsEqualNumberOfMembers" />
-        <item itemvalue="JUnit.TeamServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -171,6 +169,7 @@
       <workItem from="1696344733729" duration="4889000" />
       <workItem from="1696358138505" duration="55340000" />
       <workItem from="1696535068559" duration="12983000" />
+      <workItem from="1696601843972" duration="4099000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit - example scenario">
       <created>1696345388743</created>
@@ -242,33 +241,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java</url>
-          <line>45</line>
+          <line>48</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java</url>
-          <line>115</line>
-          <properties>
-            <option name="lambda-ordinal" value="0" />
-          </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java</url>
-          <line>116</line>
-          <properties>
-            <option name="lambda-ordinal" value="0" />
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java</url>
-          <line>104</line>
+          <line>103</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java</url>
-          <line>105</line>
+          <line>104</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
