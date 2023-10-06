@@ -91,8 +91,8 @@ public class TeamService {
     }
 
     void collectingTeamProcess(int index, List<Person> people, List<Team> teams,
-                               int groupCount, double average,
-                               int validGroup, List<Team> ListOfConflictsTeams) throws NoTeamAvailableException {
+                               int groupCount, double average, int validGroup, List<Team> ListOfConflictsTeams) throws NoTeamAvailableException
+    {
         var DeclinedPersons = new ArrayList<Person>();
         var ListUsed = new ArrayList<Team>();
 
