@@ -12,7 +12,7 @@ To get started with the Team Balancer project, follow these steps:
 
 2. Clone the repository to your local machine using `git clone` or in InteliJ
  **File** -> **Project from Version Controll** ->
- ***URL :*** https://github.com/lukaszszczurek/SM_Balancing_teams2
+ ***URL :*** https://github.com/lukaszszczurek/SM_Balancing_teams
 
 3. Configure the project settings
 
