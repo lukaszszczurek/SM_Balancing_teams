@@ -81,14 +81,14 @@ public class TeamService {
         return permutations;
     }
 
-    private static void generatePermutations(List<List<Person>> permutations, ArrayList<Person> currentPermutation, List<Person> remainingPermutation) {
-        if (remainingPermutation.isEmpty()) {
+    private static void generatePermutations(List<List<Person>> permutations, ArrayList<Person> currentPermutation, List<Person> inputList) {
+        if (inputList.isEmpty()) {
             permutations.add(new ArrayList<>(currentPermutation));
         } else {
-            for (int i = 0; i < remainingPermutation.size(); i++) {
-                Person element = remainingPermutation.get(i);
+            for (int i = 0; i < inputList.size(); i++) {
+                Person element = inputList.get(i);
                 currentPermutation.add(element);
-                List<Person> newRemaining = new ArrayList<>(remainingPermutation);
+                List<Person> newRemaining = new ArrayList<>(inputList);
                 newRemaining.remove(i);
                 generatePermutations(permutations, currentPermutation, newRemaining);
                 currentPermutation.remove(currentPermutation.size() - 1);

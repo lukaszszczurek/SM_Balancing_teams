@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d16f6f5c-307d-44da-9c05-7e3a30cf7c07" name="Changes" comment="feat : new solution commit ( test passed )">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/exception/NoTeamAvailableException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/exception/NoTeamAvailableException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="d16f6f5c-307d-44da-9c05-7e3a30cf7c07" name="Changes" comment="refactor : cleaning the code TeamService and Tests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,7 +165,7 @@
       <workItem from="1696535068559" duration="12983000" />
       <workItem from="1696601843972" duration="5659000" />
       <workItem from="1696850104926" duration="544000" />
-      <workItem from="1696851040346" duration="19005000" />
+      <workItem from="1696851040346" duration="19420000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit - example scenario">
       <created>1696345388743</created>
@@ -215,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696860609453</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor : cleaning the code TeamService and Tests">
+      <created>1696883940465</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696883940465</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +242,9 @@
     <MESSAGE value="control commit" />
     <MESSAGE value="control commit 2" />
     <MESSAGE value="feat : new solution commit ( test passed )" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : new solution commit ( test passed )" />
+    <MESSAGE value="refactor : cleaning the code" />
+    <MESSAGE value="refactor : cleaning the code TeamService and Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor : cleaning the code TeamService and Tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
