@@ -6,6 +6,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static org.balancingTeams.service.TeamService.getAllPermutationsOfList;
 import static org.junit.Assert.assertEquals;
 
 public class TeamServiceTest {
@@ -71,5 +73,35 @@ public class TeamServiceTest {
 
         assertEquals(expectedForFirstData, standardDeviationForFirstData, 0.01);
         assertEquals(expectedForSecondData, standardDeviationForSecondData, 0.01);
+    }
+
+    @Test
+    public void permutation()
+    {
+        List<Person> p = new ArrayList<>(
+                Arrays.asList(
+                        new Person("Jon",4),
+                        new Person("Joggn",3),
+                        new Person("AAA",1),
+                        new Person("Alfred",3)
+                )
+        );
+
+        var r = getAllPermutationsOfList(p);
+        var inn = r.size();
+
+        for(int i =0; i< inn; i++)
+        {
+            for(Person prr : r.get(i))
+            {
+                System.out.print(prr.getName() + " : " + prr.getRate() + ",");
+            }
+            System.out.println(" <=> ");
+
+        }
+
+
+
+        assertEquals(2,2);
     }
 }

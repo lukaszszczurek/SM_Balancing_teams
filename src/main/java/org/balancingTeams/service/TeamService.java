@@ -14,63 +14,83 @@ import static org.balancingTeams.exception.NoTeamAvailableException.DEFAULT_MESS
 public class TeamService {
 
 
-    public List<List<Person>> getBalancedTeams(List<Person> people, int groupCount) throws NoTeamAvailableException {
+    public static List<List<Person>> getAllPermutationsOfList(List<Person> people) throws NoTeamAvailableException {
+
+            List<List<Person>> permutations = new ArrayList<>();
+            generatePermutations(permutations, new ArrayList<>(), people);
+            return permutations;
+    }
+
+    private static void generatePermutations(List<List<Person>> permutations, ArrayList<Person> currentPermutation, List<Person> remainingPermutation) {
+        if (remainingPermutation.isEmpty()) {
+            permutations.add(new ArrayList<>(currentPermutation));
+        } else {
+            for (int i = 0; i < remainingPermutation.size(); i++) {
+                Person element = remainingPermutation.get(i);
+                currentPermutation.add(element);
+                List<Person> newRemaining = new ArrayList<>(remainingPermutation);
+                newRemaining.remove(i);
+                generatePermutations(permutations, currentPermutation, newRemaining);
+                currentPermutation.remove(currentPermutation.size() - 1);
+            }
+        }
+
+    }
 
 
-        double average = people.stream()
-                .mapToDouble(Person::getRate)
-                .sum() / people.size();
+    public List<Team> getBalancedTeams(List<Person> people, int groupCount) throws NoTeamAvailableException {
+
         people.sort(Comparator.comparing(Person::getRate));
+        var listOfAllPermutation = getAllPermutationsOfList(people);
+        var resultTeams = new ArrayList<Team>();
 
-        people.forEach(person -> {
-            System.out.println(person.getName() + " " + person.getRate());
-        });
-        System.out.println("--------------------");
+        double bestStandardDeviation = Double.MAX_VALUE;
 
-        // scenario if group is bigger than people count
-        int validGroup = Math.min(groupCount, people.size());
+        int size = people.size();
+        int biggerTeamsSize = people.size() / groupCount + 1;
 
-        List<Team> teams = new ArrayList<>();
-        for (int i = 0; i < validGroup; i++) {
-            teams.add(new Team());
-            teams.get(i).addMember(people.get(i));
-        }
+        int biggerTeamsCount = people.size() % groupCount;
+        int standardTeamCount = people.size() / groupCount;
 
-        var ListOfConflictsTeams = new ArrayList<Team>();
+        for( List<Person> p : listOfAllPermutation)
+        {
+            List<Team> teams = new ArrayList<>();
 
-        collectingTeamProcess(groupCount, people, teams, groupCount, average, validGroup, ListOfConflictsTeams);
-
-
-        List<List<Person>> result = new ArrayList<>();
-
-        for (int i = 0; i < groupCount; i++) {
-
-            if (i >= validGroup) {
-                result.add(null);
-            } else {
-                result.add(teams.get(i).getMembers());
+            for (int i = 0; i < groupCount; i++) {
+                teams.add(new Team());
             }
+               for (Person person : p)
+               {
+                   int modulo = p.indexOf(person) % groupCount;
+                   teams.get(modulo).addMember(person);
+               }
+
+                var standardDeviation = getStandardDeviation(teams);
+
+               if(standardDeviation < bestStandardDeviation)
+               {
+                     bestStandardDeviation = standardDeviation;
+                     resultTeams.clear();
+                     resultTeams.addAll(teams);
+
+               }
+
         }
 
-        for (List<Person> personList : result) {
-            for (Person person : personList) {
-                System.out.println(person.getName());
-            }
-            System.out.println("-----------");
-        }
-        return result;
+        return resultTeams;
+
     }
 
-    public double GetAverageInTeam(List<Person> people) {
-        return people.stream().mapToDouble(Person::getRate).sum() / people.size();
+    public double GetAverageInTeam(Team team) {
+        return team.getCurrentSum() / team.getMembers().size();
     }
 
-    public double getStandardDeviation(List<List<Person>> people) {
+    public double getStandardDeviation(List<Team> people) {
 
         List<Double> averageInTeams = new ArrayList<>();
 
-        for (List<Person> person : people) {
-            averageInTeams.add(GetAverageInTeam(person));
+        for (Team team : people) {
+            averageInTeams.add(GetAverageInTeam(team));
         }
 
         double sumAllElements = 0;
