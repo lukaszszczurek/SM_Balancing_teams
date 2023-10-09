@@ -3,14 +3,24 @@ package teamServiceTest;
 import org.balancingTeams.exception.NoTeamAvailableException;
 import org.balancingTeams.models.Person;
 import org.balancingTeams.service.TeamService;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class TeamServiceTest {
+
+    private final PrintStream standardOut = System.out;
+    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+
 
     @Test
     public void testGetBalancedTeamThrowsNoTeamAvailableExceptionException() {
@@ -52,7 +62,12 @@ public class TeamServiceTest {
         var standardDeviation = teamService.getStandardDeviation(result);
         double expected = 0.41;
 
+
+
         assertEquals(expected, standardDeviation, 0.01);
+        System.setOut(System.out);
+
+
     }
 
     @Test

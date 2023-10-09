@@ -95,4 +95,29 @@ public class TeamService {
             }
         }
     }
+
+    public void printResult(List<Person> people, int groupCount) {
+
+        var teams = getBalancedTeams(people, groupCount);
+        var standardDeviation = getStandardDeviation(teams);
+
+
+        int i = 1;
+        for (Team team : teams) {
+            System.out.print("Team no " + i + " has " + team.getMembers().size() + " players ");
+            System.out.print("(");
+            i++;
+            for (Person person : team.getMembers()) {
+
+                if(team.getMembers().indexOf(person) == team.getMembers().size() - 1)
+                    System.out.print(person.getName());
+                else
+                    System.out.print(person.getName() + ", ");
+                 }
+
+            System.out.print(").");
+            System.out.println("Average: " + GetAverageInTeam(team));
+        }
+        System.out.println("Teams rate standard deviation: " + standardDeviation);
+    }
 }

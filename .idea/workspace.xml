@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d16f6f5c-307d-44da-9c05-7e3a30cf7c07" name="Changes" comment="refactor : cleaning the code TeamService and Tests" />
+    <list default="true" id="d16f6f5c-307d-44da-9c05-7e3a30cf7c07" name="Changes" comment="refactor : formatting code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +67,20 @@
       <recent name="teamServiceTest" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TeamServiceTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.balancingTeams.Main" />
+      <module name="SM_interview_task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.balancingTeams.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TeamServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SM_interview_task" />
       <extension name="coverage">
@@ -77,7 +96,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TeamServiceTest.getBalancedTeamsDifferNumberOfMembers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TeamServiceTest.givenSystemOutRedirection_whenInvokePrintln_thenOutputCaptorSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SM_interview_task" />
       <extension name="coverage">
         <pattern>
@@ -87,39 +106,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="teamServiceTest" />
       <option name="MAIN_CLASS_NAME" value="teamServiceTest.TeamServiceTest" />
-      <option name="METHOD_NAME" value="getBalancedTeamsDifferNumberOfMembers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TeamServiceTest.getBalancedTeamsEqualNumberOfMembers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SM_interview_task" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="teamServiceTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="teamServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="teamServiceTest.TeamServiceTest" />
-      <option name="METHOD_NAME" value="getBalancedTeamsEqualNumberOfMembers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TeamServiceTest.permutation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SM_interview_task" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="teamServiceTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="teamServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="teamServiceTest.TeamServiceTest" />
-      <option name="METHOD_NAME" value="permutation" />
+      <option name="METHOD_NAME" value="givenSystemOutRedirection_whenInvokePrintln_thenOutputCaptorSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,13 +128,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TeamServiceTest.testGetBalancedTeamsGivenTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SM_interview_task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teamServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="teamServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="teamServiceTest.TeamServiceTest" />
+      <option name="METHOD_NAME" value="testGetBalancedTeamsGivenTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TeamServiceTest.givenSystemOutRedirection_whenInvokePrintln_thenOutputCaptorSuccess" />
+        <item itemvalue="JUnit.TeamServiceTest.testGetBalancedTeamsGivenTest" />
         <item itemvalue="JUnit.TeamServiceTest" />
         <item itemvalue="JUnit.TeamServiceTest.testGetBalancedTeamThrowsNoTeamAvailableExceptionException" />
-        <item itemvalue="JUnit.TeamServiceTest.getBalancedTeamsDifferNumberOfMembers" />
-        <item itemvalue="JUnit.TeamServiceTest.getBalancedTeamsEqualNumberOfMembers" />
-        <item itemvalue="JUnit.TeamServiceTest.permutation" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +168,7 @@
       <workItem from="1696535068559" duration="12983000" />
       <workItem from="1696601843972" duration="5659000" />
       <workItem from="1696850104926" duration="544000" />
-      <workItem from="1696851040346" duration="19420000" />
+      <workItem from="1696851040346" duration="22320000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit - example scenario">
       <created>1696345388743</created>
@@ -216,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696883940465</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactor : formatting code">
+      <created>1696884813040</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696884813040</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,29 +254,25 @@
     <MESSAGE value="feat : new solution commit ( test passed )" />
     <MESSAGE value="refactor : cleaning the code" />
     <MESSAGE value="refactor : cleaning the code TeamService and Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor : cleaning the code TeamService and Tests" />
+    <MESSAGE value="refactor : formatting code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor : formatting code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java</url>
-          <line>79</line>
+          <line>94</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java</url>
-          <line>78</line>
+          <line>93</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/balancingTeams/service/TeamService.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/teamServiceTest/TeamServiceTest.java</url>
-          <line>91</line>
+          <line>106</line>
           <properties class="teamServiceTest.TeamServiceTest" method="getBalancedTeamsDifferNumberOfMembers">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
